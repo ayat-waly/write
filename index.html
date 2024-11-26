@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار الإجابة</title>
+</head>
+
+<body style="text-align: center; font-family: Arial, sans-serif;">
+
+    <!-- رابط لفتح السؤال -->
+    <a href="javascript:void(0)" onclick="openQuiz()">افتح السؤال</a>
+
+    <script type="text/javascript">
+        function openQuiz() {
+            var windowContent = `
+          <div style="direction: rtl; text-align: right; padding: 20px;">
+            <p>ما هو تعريف الضوء؟</p>
+            <textarea id="answerBox" rows="4" cols="50" placeholder="اكتب إجابتك هنا..." style="direction: rtl; text-align: right;"></textarea>
+            <br>
+            <button onclick="alert('إجابتك: ' + document.getElementById('answerBox').value)">إرسال الإجابة</button>
+          </div>
+        `;
+
+            // فتح نافذة منبثقة وعرض المحتوى
+            var popupWindow = window.open("", "Popup", "width=500,height=400,scrollbars=yes");
+            popupWindow.document.write(windowContent);
+            popupWindow.document.close();
+        }
+    </script>
+</body>
+
+</html>
